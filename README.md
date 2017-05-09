@@ -1,7 +1,8 @@
 # makeBootable
-script to create bootable usb in macOS
+script to create bootable usb in macOS when there's no time
 
 ```sh
+$ python makeBootable.py -h
 usage: makeBootable.py [-h] [-if INPUTFILE] [-of OUTPUTFILE]
 
 optional arguments:
@@ -13,7 +14,7 @@ optional arguments:
 ```
 ## Example:
 ```sh
-$ python makeBootable.py -if /Users/afaaq/Downloads/iso/exploit.iso -of /dev/disk2
+$ python makeBootable.py -if /Users/test/Downloads/iso/exploit.iso -of /dev/disk2
 or
 $ python makeBootable.py
 /dev/disk0 (internal):
@@ -35,12 +36,17 @@ $ python makeBootable.py
    0:                            Custom Live CD         *4.0 GB     disk2
 
 destination disk path:   /dev/disk2
-source iso path:   /Users/afaaq/Downloads/iso/exploit.iso
+source iso path:   /Users/test/Downloads/iso/exploit.iso
 Unmount of all volumes on disk2 was successful
+Writing to disk...
 Password: //enter password
-450+1 records in
-450+1 records out
-472741888 bytes transferred in 285.419224 secs (1656307 bytes/sec)
 Disk /dev/disk2 ejected
 Bootable USB created!
+```
+## Note
+ Press `Ctrl + t` to get the status during disk writing process.
+```sh
+2664+1 records in
+2664+1 records out
+2794307584 bytes transferred in 139.179738 secs (20076971 bytes/sec)
 ```
